@@ -37,4 +37,4 @@ samples, guidance on mobile development, and a full API reference.
 # Testing
 - **This app Using Unit tests:**
 
-# This App Using CI (continuous integration)
+# CI (continuous integration)
