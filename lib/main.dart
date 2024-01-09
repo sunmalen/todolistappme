@@ -7,19 +7,24 @@ import 'package:todouserapp/screens/tabs_screen.dart';
 import 'package:todouserapp/services/app_router.dart';
 import 'blocs/bloc/tasks_bloc.dart';
 
-Future<void>main() async {
+
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final storage = await HydratedStorage.build(storageDirectory: await getApplicationDocumentsDirectory());
 
+
 HydratedBlocOverrides.runZoned(
-      ()=> runApp( MyApp(appRouter: AppRouter(),)),
+    //  ()=> runApp( MyApp(appRouter: AppRouter(),)),
+      ()=> runApp( const MyApp()),
     storage: storage,
+
   );
 }
 
+
 class MyApp extends StatelessWidget {
-  const MyApp({Key?key,required this.appRouter}): super(key: key);
-  final AppRouter appRouter;
+  const MyApp({Key?key}): super(key: key);
+ // final AppRouter appRouter;
 
   // This widget is the root of your application.
   @override
@@ -37,7 +42,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         home: const TabsScreen(),
-        onGenerateRoute: appRouter.onGenerateRoute,
+      //  onGenerateRoute: appRouter.onGenerateRoute,
       ),
     );
   }

@@ -10,7 +10,7 @@ import 'package:todouserapp/services/app_router.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    await tester.pumpWidget(MyApp(appRouter: AppRouter(),));
+    await tester.pumpWidget(MyApp());
 
   });
 
