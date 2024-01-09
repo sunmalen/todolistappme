@@ -12,10 +12,10 @@ import 'package:todouserapp/main.dart';
 import 'package:todouserapp/services/app_router.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    WidgetsFlutterBinding.ensureInitialized();
     await tester.pumpWidget(MyApp(appRouter: AppRouter(),));
 
   });
+
 }
