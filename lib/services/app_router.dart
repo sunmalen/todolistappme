@@ -14,7 +14,7 @@ class AppRouter{
       case TabsScreen.id:
         return MaterialPageRoute(
             builder: (_)=> const TabsScreen());
-      case RecycleBin.id:
+      case PendingTasksScreen.id:
         return MaterialPageRoute(
             builder: (_) => const PendingTasksScreen());
       default:
