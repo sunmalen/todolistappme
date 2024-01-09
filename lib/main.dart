@@ -7,7 +7,7 @@ import 'package:todouserapp/screens/tabs_screen.dart';
 import 'package:todouserapp/services/app_router.dart';
 import 'blocs/bloc/tasks_bloc.dart';
 
-void main() async {
+Future<void>main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final storage = await HydratedStorage.build(storageDirectory: await getApplicationDocumentsDirectory());
 
