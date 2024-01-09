@@ -14,8 +14,7 @@ void main() async {
 
 
 HydratedBlocOverrides.runZoned(
-    //  ()=> runApp( MyApp(appRouter: AppRouter(),)),
-      ()=> runApp( const MyApp()),
+      ()=> runApp( MyApp(appRouter: AppRouter(),)),
     storage: storage,
 
   );
@@ -23,8 +22,8 @@ HydratedBlocOverrides.runZoned(
 
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key?key}): super(key: key);
- // final AppRouter appRouter;
+  const MyApp({Key?key,required this.appRouter}): super(key: key);
+  final AppRouter appRouter;
 
   // This widget is the root of your application.
   @override
@@ -42,7 +41,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         home: const TabsScreen(),
-      //  onGenerateRoute: appRouter.onGenerateRoute,
+        onGenerateRoute: appRouter.onGenerateRoute,
       ),
     );
   }
