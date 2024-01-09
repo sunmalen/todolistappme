@@ -14,29 +14,6 @@ class TabsScreen extends StatefulWidget {
 
 class _TabsScreenState extends State<TabsScreen> {
 
-  static const bottomNavigationBarTheme = BottomNavigationBarThemeData(
-    backgroundColor: Colors.white,
-    selectedIconTheme: IconThemeData(
-      color: Colors.green,
-      size: 24,
-    ),
-    selectedLabelStyle: TextStyle(
-      color: Colors.green,
-      fontSize: 12,
-    ),
-    unselectedIconTheme: IconThemeData(
-      color: Colors.white,
-      size: 24,
-    ),
-    unselectedLabelStyle: TextStyle(
-      color: Colors.white,
-      fontSize: 12,
-    ),
-
-    // Uncommenting this changes the color of the title but not the icon
-//    selectedItemColor: Colors.deepPurple,
-//    unselectedItemColor: Colors.deepPurpleAccent,
-  );
 
   final List<Map<String, dynamic>> _pageDetails = [
     {
@@ -70,6 +47,7 @@ class _TabsScreenState extends State<TabsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pageDetails[_selectedPageIndex]['pageName'],
+
       floatingActionButton:_selectedPageIndex == 0 ? FloatingActionButton(
         backgroundColor: Colors.lightBlueAccent,
         onPressed: () => _addTask(context),
