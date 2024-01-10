@@ -18,6 +18,7 @@ class _PendingTasksScreenState extends State<PendingTasksScreen> {
     // TODO: implement build
     return BlocBuilder<TasksBloc,TasksState>(
       builder: (context,state){
+
         List<Task> tasksList = state.pendingTasks;
 
         return Scaffold(
