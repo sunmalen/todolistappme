@@ -25,8 +25,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context)=> TasksBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<TasksBloc>(
+          lazy: false,
+          create: (BuildContext context) => TasksBloc(),
+        ),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Tasks App',
