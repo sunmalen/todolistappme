@@ -10,17 +10,11 @@ import 'blocs/bloc/tasks_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final storage = await HydratedStorage.build(storageDirectory: await getApplicationDocumentsDirectory());
-
-
-HydratedBlocOverrides.runZoned(
-      ()=> runApp( MyApp(appRouter: AppRouter(),)),
-    storage: storage,
-
+  HydratedBloc.storage = await HydratedStorage.build(
+    storageDirectory: await getTemporaryDirectory(),
   );
+  runApp(MyApp(appRouter: AppRouter(),));
 }
-
-
 class MyApp extends StatelessWidget {
   const MyApp({Key?key,required this.appRouter}): super(key: key);
   final AppRouter appRouter;
