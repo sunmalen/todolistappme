@@ -10,7 +10,7 @@ import '../models/task_model.dart';
 
 class CompletedTasksScreen extends StatelessWidget {
   const CompletedTasksScreen({Key? key}) : super(key: key);
-  static const id =  'tasks_screen';
+  static const id =  'completed_screen';
 
   @override
   Widget build(BuildContext context) {

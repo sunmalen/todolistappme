@@ -8,15 +8,9 @@ import '../screens/recycle_bin_screen.dart';
 class AppRouter{
   Route? onGenerateRoute(RouteSettings routeSettings){
     switch (routeSettings.name){
-      case RecycleBin.id:
-        return MaterialPageRoute(
-            builder: (_) => const RecycleBin());
       case TabsScreen.id:
         return MaterialPageRoute(
             builder: (_)=> const TabsScreen());
-      case PendingTasksScreen.id:
-        return MaterialPageRoute(
-            builder: (_) => const PendingTasksScreen());
       default:
         return null;
     }
